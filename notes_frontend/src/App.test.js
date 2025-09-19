@@ -1,8 +1,10 @@
 import { render, screen } from '@testing-library/react';
 import App from './App';
 
-test('renders learn react link', () => {
+test('renders Ocean Notes header and empty state', () => {
   render(<App />);
-  const linkElement = screen.getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+  // Header brand title
+  expect(screen.getByText(/Ocean Notes/i)).toBeInTheDocument();
+  // Empty state when no note selected initially
+  expect(screen.getByText(/No note selected/i)).toBeInTheDocument();
 });
